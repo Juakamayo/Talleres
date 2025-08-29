@@ -2,8 +2,6 @@ import java.util.*;
 
 
 public class Taller01 {
-    Character[] vocalesArray = {'a','e','i','o','u'};
-    List<Character> listaVocales = new ArrayList<>(Arrays.asList(vocalesArray));
 
     public static void main(String[] args) {
         menu();
@@ -53,6 +51,7 @@ public class Taller01 {
                 verificarRevesDerecho(palabra);
                 break;
             case 2:
+                contarVocales(palabra);
                 break;
             case 3:
                 break;
@@ -86,7 +85,25 @@ public class Taller01 {
         String palabraInvertida = new StringBuilder(palabraInv).reverse().toString();
         System.out.println(palabraInv);
         return palabraInvertida;
+    }
 
+    public static void contarVocales(String palabra) {
+
+        Character[] vocalesArray = {'a','e','i','o','u'};
+        List<Character> listaVocales = new ArrayList<>(Arrays.asList(vocalesArray));
+
+        int contador = 0;
+        String palabraNormalizada = palabra.toLowerCase();
+
+        for (int i = 0; i < palabraNormalizada.length(); i++) {
+            char caracter = palabraNormalizada.charAt(i);
+
+            if (listaVocales.contains(caracter)) {
+                contador++;
+
+            }
+        }
+        System.out.println("La palabra tiene " +contador+ " vocales");
     }
 
 }

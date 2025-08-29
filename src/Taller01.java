@@ -54,6 +54,7 @@ public class Taller01 {
                 contarVocales(palabra);
                 break;
             case 3:
+                encriptarTexto(palabra);
                 break;
             case 4:
                 break;
@@ -105,5 +106,24 @@ public class Taller01 {
         }
         System.out.println("La palabra tiene " +contador+ " vocales");
     }
+    public static void encriptarTexto(String palabra){
+
+        String textoEncriptado = palabra.toLowerCase();
+        textoEncriptado = textoEncriptado
+                .replace('a','@')
+                .replace('e','&')
+                .replace('i','!')
+                .replace('o','*')
+                .replace('u','#');
+        System.out.println("El texto encriptado sera:\n");
+        System.out.println(textoEncriptado);
+    }
+
+    public static void desencriptarTexto(String palabra) {
+
+
+
+    }
+
 
 }

@@ -1,12 +1,9 @@
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class Taller01 {
-    char[] vocales = {'a','e','i','o','u'};
-    List<Character> listaVocales = new ArrayList<>(vocales);
+    Character[] vocalesArray = {'a','e','i','o','u'};
+    List<Character> listaVocales = new ArrayList<>(Arrays.asList(vocalesArray));
 
     public static void main(String[] args) {
         menu();

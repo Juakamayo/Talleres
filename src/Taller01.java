@@ -57,6 +57,7 @@ public class Taller01 {
                 encriptarTexto(palabra);
                 break;
             case 4:
+                desencriptarTexto(palabra);
                 break;
             case 5:
                 break;
@@ -121,6 +122,15 @@ public class Taller01 {
 
     public static void desencriptarTexto(String palabra) {
 
+        String textoDesencriptado = palabra.toLowerCase();
+        textoDesencriptado = textoDesencriptado
+                .replace('@','a')
+                .replace('&','e')
+                .replace('!','i')
+                .replace('*','o')
+                .replace('#','u');
+        System.out.println("El texto desencriptado sera:\n");
+        System.out.println(textoDesencriptado);
 
 
     }

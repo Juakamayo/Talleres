@@ -11,14 +11,23 @@ public class Taller01 {
 
         Scanner respuesta = new Scanner(System.in);
         int opcion;
+        Scanner frase = new Scanner(System.in);
+
+        java.lang.String palabra = obtenerFrase(frase);
 
         do{
             mostrarMenu();
             opcion = leerOpcion(respuesta);
-            ejecutarOpcion(opcion, respuesta);
+            ejecutarOpcion(opcion, palabra);
         } while (opcion != 5);
 
 
+    }
+
+    public static String obtenerFrase(Scanner inputScanner) {
+        System.out.println("Ingresa una frase para experimentar con ella: ");
+        String frase = inputScanner.nextLine();
+        return frase;
     }
 
     public static void mostrarMenu() {
@@ -36,10 +45,10 @@ public class Taller01 {
         return opcion;
     }
 
-    public static void ejecutarOpcion(int opcion, Scanner in) {
+    public static void ejecutarOpcion(int opcion, String palabra) {
         switch (opcion) {
             case 1:
-                //algo
+                verificarRevesDerecho(palabra);
                 break;
             case 2:
                 break;
@@ -55,6 +64,14 @@ public class Taller01 {
 
         }
     }
+
+    public static void verificarRevesDerecho(String palabra) {
+        System.out.println(palabra);
+
+
+    }
+
+
 
 
 }

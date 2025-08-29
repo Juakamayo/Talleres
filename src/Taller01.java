@@ -1,8 +1,12 @@
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Taller01 {
+    char[] vocales = {'a','e','i','o','u'};
+    List<Character> listaVocales = new ArrayList<>(vocales);
 
     public static void main(String[] args) {
         menu();
@@ -69,25 +73,23 @@ public class Taller01 {
     public static void verificarRevesDerecho(String palabra) {
 
         java.lang.String palabraInvertida = invertirPalabra(palabra);
+
+        palabra = palabra.replaceAll("\\s+","").toLowerCase();
         if (Objects.equals(palabra, palabraInvertida)){
             System.out.println("Efectivamente esta palabra es un palindromo");
         }else {
             System.out.println("Esta palabra no es un palindromo");
         }
-
-
-
     }
 
     public static String invertirPalabra(String palabra){
-        StringBuilder invertida = new StringBuilder(palabra);
-        String palabraInvertida = invertida.reverse().toString();
+
+        String palabraInv = palabra.replaceAll("\\s+","");
+        palabraInv = palabraInv.toLowerCase();
+        String palabraInvertida = new StringBuilder(palabraInv).reverse().toString();
+        System.out.println(palabraInv);
         return palabraInvertida;
 
     }
-
-
-
-
 
 }
